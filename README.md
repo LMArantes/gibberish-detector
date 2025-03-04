@@ -24,12 +24,30 @@ The **Gibberish Detector** is a simple Python script that evaluates whether a gi
 1. Import and use the `words_check` function:
 
 ```python
-from gibberish_detector import words_check
+from detector import words_check
 
 text = "Hello world"
 score = words_check(text)
 print(f"Score: {score}")
 ```
+
+## Command-Line Usage
+
+For users who prefer not to modify the code, the script can be run from the command line.
+
+### Check a Direct Text Input
+You can analyze a text string directly by running:
+`python detector_cli.py -t "Hello world"`
+
+### Analyze a Text File
+To analyze a `.txt` file, provide its path:
+`python detector_cli.py -f path/to/file.txt`
+
+### Output
+The script will print a gibberish score between `0.0` and `1.0`:
+- `1.0` → All words are recognized.
+- `0.0` → No words are recognized (likely gibberish).
+- A score between `0.0` and `1.0` indicates partial recognition.
 
 ## Score Interpretation
 
@@ -40,4 +58,8 @@ print(f"Score: {score}")
 ## License
 
 This project is licensed under the **Modified Attribution License (MAL) v1.0**.  
-See the [LICENSE](https://lmarantes.github.io/Modified-Attribution-License/) for details.
+[![License: MAL v1.0](https://img.shields.io/badge/License%3A%20MAL%20v1.0-forestgreen?style=plastic&color=forestgreen)](https://lmarantes.github.io/Modified-Attribution-License/)
+
+---
+
+[Buy me a coffee! ☕❤️](https://buymeacoffee.com/lmarantes)

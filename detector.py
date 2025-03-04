@@ -1,5 +1,6 @@
 import pickle
 import os
+import re
 
 PICKLE_PATH = os.path.join(os.path.dirname(__file__), "words_set.pkl")
 
@@ -8,10 +9,14 @@ with open(PICKLE_PATH, "rb") as file:
 
 
 def words_check(text):
-
-    # Analyzes the given text and returns a score (0 - 1)
+    """Analyzes the given text and returns a score (0 - 1) based on recognized words."""
     text = text.lower()
-    split_text = text.split()
+
+    # Remove punctuation except for letters, numbers, hyphens, and apostrophes
+    split_text = [re.sub(r"[^\w'-]", "", word) for word in text.split()]
+
+    # Filter out empty words after cleaning
+    split_text = [word for word in split_text if word]
 
     if not split_text:
         return 0.0
