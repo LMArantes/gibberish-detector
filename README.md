@@ -43,12 +43,6 @@ You can analyze a text string directly by running:
 To analyze a `.txt` file, provide its path:
 `python detector_cli.py -f path/to/file.txt`
 
-### Output
-The script will print a gibberish score between `0.0` and `1.0`:
-- `1.0` → All words are recognized.
-- `0.0` → No words are recognized (likely gibberish).
-- A score between `0.0` and `1.0` indicates partial recognition.
-
 ## Score Interpretation
 
 - 1.0 → All words are recognized.
